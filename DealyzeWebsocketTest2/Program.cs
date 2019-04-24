@@ -108,8 +108,8 @@ namespace DealyzeWebsocketTest2
                 JToken discount = order["discounts"][0] as JToken;
 
                 var items = new JArray();
-                items[0] = discount["name"];
-                items[1] = discount["skus"];
+                items.Add(discount["name"]);
+                items.Add(discount["skus"]);
                 responseOrder["items"] = items;
                 responseOrder["total"] = 0;
 
@@ -168,14 +168,14 @@ namespace DealyzeWebsocketTest2
 
             // send the bill payment order with the current employee information
             JArray skus = new JArray();
-            skus[0] = "abc123";
+            skus.Add("abc123");
 
             JObject item = new JObject();
             item["name"] = "Bill Pay";
             item["skus"] = skus;
 
             JArray items = new JArray();
-            items[0] = item;
+            items.Add(item);
 
             JObject order = new JObject();
             order["items"] = items;
